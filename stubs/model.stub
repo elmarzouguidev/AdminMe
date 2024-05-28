@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\UuidGenerator;
+use App\Traits\GetModelByKeyName;
+
+class {{ class }} extends Model
+{
+    use HasFactory;
+    use UuidGenerator;
+    use GetModelByKeyName;
+}
