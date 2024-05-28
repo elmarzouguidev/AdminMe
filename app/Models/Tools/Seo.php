@@ -1,20 +1,15 @@
 <?php
 
-namespace App\Models\CMS;
+namespace App\Models\Tools;
 
 use App\Traits\GetModelByKeyName;
-use App\Traits\Seoable;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Post extends Model implements HasMedia
+class Seo extends Model
 {
     use HasFactory;
     use UuidGenerator;
     use GetModelByKeyName;
-    use InteractsWithMedia;
-    use Seoable;
 }
