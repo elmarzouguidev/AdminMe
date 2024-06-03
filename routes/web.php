@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Home\HomeController;
 use App\Mail\Resend\MailTest;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,8 @@ Route::get('/resend', function () {
         'subject' => 'hello world',
         'html' => (new MailTest())->render(),
     ]);*/
+});
+
+Route::group(['prefix' => 'theadmin', 'as' => 'admin:'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 });
