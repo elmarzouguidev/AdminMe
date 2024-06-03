@@ -30,8 +30,8 @@ Route::group(['prefix' => 'theadmin', 'as' => 'admin:'], function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::group(['prefix' => 'cms'], function () {
-        
+    Route::group(['prefix' => 'cms', 'as' => 'cms:'], function () {
+
         Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
         Route::get('/category', [CategoryController::class, 'index'])->name('category');

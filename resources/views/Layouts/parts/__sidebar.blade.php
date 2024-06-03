@@ -44,22 +44,25 @@
                 <!-- End::slide__category -->
 
                 <!-- Start::slide -->
-                <li class="slide has-sub">
-                    <a href="javascript:void(0);" class="side-menu__item">
+                <li class="slide has-sub {{ request()->routeIs('admin:cms:*') ? 'open active' : '' }}">
+                    <a href="javascript:void(0);"
+                        class="side-menu__item {{ request()->routeIs('admin:cms:*') ? 'active' : '' }}">
                         <i class="bx bx-file-blank side-menu__icon"></i>
                         <span class="side-menu__label">Blog<span
                                 class="badge bg-secondary-transparent ms-2">New</span></span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
                     <ul class="slide-menu child1">
-                        <li class="slide side-menu__label1">
-                            <a href="{{ route('admin:blog') }}">Blog</a>
+                        <li class="slide side-menu__label1 {{ request()->routeIs('admin:cms:*') ? 'active' : '' }}">
+                            <a href="{{ route('admin:cms:blog') }}">Blog</a>
                         </li>
                         <li class="slide">
-                            <a href="{{ route('admin:blog') }}" class="side-menu__item">Blog</a>
+                            <a href="{{ route('admin:cms:blog') }}"
+                                class="side-menu__item {{ request()->routeIs('admin:cms:blog') ? 'active' : '' }}">Blog</a>
                         </li>
                         <li class="slide">
-                            <a href="{{ route('admin:category') }}" class="side-menu__item">Category</a>
+                            <a href="{{ route('admin:cms:category') }}"
+                                class="side-menu__item {{ request()->routeIs('admin:cms:category') ? 'active' : '' }}">Category</a>
                         </li>
 
                     </ul>
