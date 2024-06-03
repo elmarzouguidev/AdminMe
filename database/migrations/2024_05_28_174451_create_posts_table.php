@@ -19,13 +19,15 @@ return new class extends Migration
 
             $table->string('title');
             $table->string('slug');
-            $table->longText('content')->nullable();
+           
             $table->mediumText('excerpt')->nullable();
+            $table->longText('content')->nullable();
+
             $table->json('options')->nullable();
 
             $table->foreignIdFor(Category::class)->index()->nullable()->constrained()->nullOnDelete();
 
-            $table->foreignIdFor(User::class)->index()->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(User::class)->index()->nullable()->constrained()->nullOnDelete();//Author
 
             $table->boolean('active')->default(false);
             $table->dateTime('published_at')->nullable();

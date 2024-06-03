@@ -14,7 +14,7 @@ trait HasSlug
 
     public function getSlugName(): string
     {
-        return property_exists($this, 'slugName') ? $this->slugName : 'name';
+        return property_exists($this, 'slugName') ? $this->slugName : 'title';
     }
 
     public function getSlugOptions(): SlugOptions

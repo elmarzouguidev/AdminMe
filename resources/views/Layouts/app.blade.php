@@ -74,11 +74,11 @@
             <div class="container-fluid">
 
                 <!-- Page Header -->
-                 @include('Layouts.parts.breadcrumb')
+                @include('Layouts.parts.breadcrumb')
                 <!-- Page Header Close -->
 
                 <!-- Start::row-1 -->
-                 @yield('content')
+                @yield('content')
                 <!--End::row-1 -->
 
             </div>
@@ -127,8 +127,10 @@
     <!-- Apex Charts JS -->
     <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
-    <!-- HRM Dashboard JS -->
-    <script src="{{ asset('assets/js/personal-dashboard.js') }}"></script>
+    @if (request()->routeIs('admin:home'))
+        <!-- HRM Dashboard JS -->
+        <script src="{{ asset('assets/js/personal-dashboard.js') }}"></script>
+    @endif
 
 
     <!-- Custom-Switcher JS -->
