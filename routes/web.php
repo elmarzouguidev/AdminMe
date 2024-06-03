@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Blog\BlogController;
+use App\Http\Controllers\Admin\Blog\CategoryController;
 use App\Http\Controllers\Admin\Home\HomeController;
 use App\Mail\Resend\MailTest;
 use Illuminate\Support\Facades\Mail;
@@ -25,5 +27,13 @@ Route::get('/resend', function () {
 });
 
 Route::group(['prefix' => 'theadmin', 'as' => 'admin:'], function () {
+
     Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Route::group(['prefix' => 'cms'], function () {
+        
+        Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+
+        Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    });
 });
