@@ -29,6 +29,11 @@ class Post extends Model implements HasMedia
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
@@ -38,7 +43,7 @@ class Post extends Model implements HasMedia
     {
         return [
             'active' => PostStatusEnum::class,
-            'published_at'=>'date',
+            'published_at' => 'date',
         ];
     }
 }

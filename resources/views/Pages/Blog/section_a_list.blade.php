@@ -6,8 +6,8 @@
                     All Blog List
                 </div>
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="job-post.html" class="btn btn-primary btn-wave btn-sm">
-                        <i class="ri-add-line me-1 align-middle"></i>Post Job
+                    <a href="{{route('admin:cms:blog.create')}}" class="btn btn-primary btn-wave btn-sm">
+                        <i class="ri-add-line me-1 align-middle"></i>Add Post
                     </a>
                     <div>
                         <input class="form-control form-control-sm" type="text" placeholder="Search Here"
@@ -61,8 +61,9 @@
                                                 </svg></span>
                                             <div class="ms-2">
                                                 <p class="fw-semibold mb-0 d-flex align-items-center"><a
-                                                        href="job-details.html"> {{ $post->title }}</a></p>
-                                                <p class="fs-12 text-muted mb-0">Remote/Onsite</p>
+                                                        href="{{ route('admin:cms:blog.edit', $post) }}">
+                                                        {{ $post->title }}</a></p>
+                                                <p class="fs-12 text-muted mb-0">{{$post->category?->name ?? 'default'}}</p>
                                             </div>
                                         </div>
                                     </td>
@@ -98,7 +99,7 @@
                                             class="btn btn-icon btn-sm btn-primary-light btn-wave waves-effect waves-light">
                                             <i class="ri-eye-line"></i>
                                         </a>
-                                        <a href="javascript:void(0);"
+                                        <a href="{{ route('admin:cms:blog.edit', $post) }}"
                                             class="btn btn-icon btn-sm btn-info-light btn-wave waves-effect waves-light">
                                             <i class="ri-edit-line"></i>
                                         </a>

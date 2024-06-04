@@ -34,6 +34,13 @@ Route::group(['prefix' => 'theadmin', 'as' => 'admin:'], function () {
 
         Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
+        Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+        Route::post('/blog/create', [BlogController::class, 'store'])->name('blog.store');
+
+
+        Route::get('/blog/{post}', [BlogController::class, 'edit'])->name('blog.edit');
+        Route::put('/blog/{post}', [BlogController::class, 'update'])->name('blog.update');
+
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
     });
 });

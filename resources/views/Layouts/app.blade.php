@@ -44,6 +44,8 @@
     <!-- Choices Css -->
     <link rel="stylesheet" href="{{ asset('assets/libs/choices.js/public/assets/styles/choices.min.css') }}">
 
+    @yield('css')
+
 
 </head>
 
@@ -136,8 +138,13 @@
     <!-- Custom-Switcher JS -->
     <script src="{{ asset('assets/js/custom-switcher.min.js') }}"></script>
 
+
+    @yield('js')
+
     <!-- Custom JS -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+
 
 </body>
 
